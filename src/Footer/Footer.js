@@ -8,10 +8,8 @@ import './Footer.css';
 class Footer extends Component {
   render() {
     return (
-        <Navbar fluid fixedBottom>
-          <Nav pullRight>
-            <NavItem eventKey={3} href="mailto:ryan.shackleton@gmail.com">Contact</NavItem>
-          </Nav>
+        <Navbar id="footer" fluid fixedBottom>
+            <a className="navbar-right" href="mailto: ryan.shackleton@gmail.com">Contact</a>
         </Navbar>
     );
   }

@@ -1,3 +1,13 @@
-.navbar-default .navbar-nav > li > a {
-  color: white;
+#footer {
+  position: relative;
+  height: 50px;
 }
+
+#footer > .container-fluid > a {
+  height: 25px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 10px;
+}
+
+

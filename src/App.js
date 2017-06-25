@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Panel } from 'react-bootstrap';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import LeafletMap from './LeafletMap/LeafletMap';
 
 class App extends Component {
   render() {
@@ -13,7 +14,11 @@ class App extends Component {
         </Row>
         <Row className="show-grid">
           <Col xsHidden smHidden md={4} lg={4}>SideBar</Col>
-          <Col xs={12} sm={12} md={8} lg={8}>Main Content</Col>
+          <Col id='map-outer-container' xs={12} sm={12} md={8} lg={8} >
+            <div id="map-container" className="container-fluid">
+              <LeafletMap>Hello Map</LeafletMap>
+            </div>
+          </Col>
         </Row>
         <Row>
           <Footer>Footer</Footer>
