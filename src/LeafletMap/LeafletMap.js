@@ -6,20 +6,24 @@ import { render } from 'react-dom';
 import { Map, TileLayer, LayersControl } from 'react-leaflet';
 import './LeafletMap.css';
 
-const position = [51.505, -0.09];
 class LeafletMap extends Component {
-  constructor() {
-    super();
-    this.state = {
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 6,
-    };
+  constructor(props)
+  {
+    super(props);
+    this.state = Object.assign({
+      lat:  0,
+      lng: 20,
+      zoom: 2,
+    }, props);
   }
   render() {
-    const position = [this.state.lat, this.state.lng];
     return (
-      <Map center={position} zoom={this.state.zoom}>
+      <Map
+        center={[this.state.lat, this.state.lng]}
+        zoom={this.state.zoom}
+        useFlyTo={true}
+        animate={true}
+        >
         <LayersControl position="topright" >
           <LayersControl.BaseLayer
             name="Oceans"
@@ -39,6 +43,14 @@ class LeafletMap extends Component {
         </LayersControl>
       </Map>
     );
+  }
+  componentWillReceiveProps(nextProps){
+    if( this.state.lat === nextProps.lat
+      && this.state.lng === nextProps.lng
+      && this.state.zoom === nextProps.zoom ) {
+      return;
+    }
+    render();
   }
 }
 
