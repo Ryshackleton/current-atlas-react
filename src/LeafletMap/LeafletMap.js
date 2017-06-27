@@ -19,10 +19,11 @@ class LeafletMap extends Component {
   render() {
     return (
       <Map
-        center={[this.state.lat, this.state.lng]}
-        zoom={this.state.zoom}
+        center={[+this.state.lat, +this.state.lng]}
+        zoom={+this.state.zoom}
         useFlyTo={true}
         animate={true}
+        onViewportChanged={this.props.onViewportChanged}
         >
         <LayersControl position="topright" >
           <LayersControl.BaseLayer
@@ -48,9 +49,13 @@ class LeafletMap extends Component {
     if( this.state.lat === nextProps.lat
       && this.state.lng === nextProps.lng
       && this.state.zoom === nextProps.zoom ) {
-      return;
     }
-    render();
+    else
+    {
+      this.state.lat = nextProps.lat;
+      this.state.lng = nextProps.lng;
+      this.state.zoom = nextProps.zoom;
+    }
   }
 }
 

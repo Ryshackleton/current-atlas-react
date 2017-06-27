@@ -14,6 +14,8 @@ Uses [react-router](https://reacttraining.com/react-router/) to allow the map vi
 So, for example, to zoom to Seattle, try:
 https://current-atlas-react.herokuapp.com/view/47.616614/-122.334540/11
 
+Conversely, upon panning or zooming the map, the URL will update, so a user can pan/zoom to a location, bookmark or copy the URL to return to the same view.
+
 ### Other Tools
 This project was bootstrapped using the excellent  React template: [Create React App](https://github.com/facebookincubator/create-react-app).
 
