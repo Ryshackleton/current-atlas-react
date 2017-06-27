@@ -45,18 +45,6 @@ class LeafletMap extends Component {
       </Map>
     );
   }
-  componentWillReceiveProps(nextProps){
-    if( this.state.lat === nextProps.lat
-      && this.state.lng === nextProps.lng
-      && this.state.zoom === nextProps.zoom ) {
-    }
-    else
-    {
-      this.state.lat = nextProps.lat;
-      this.state.lng = nextProps.lng;
-      this.state.zoom = nextProps.zoom;
-    }
-  }
 }
 
 export default LeafletMap;
